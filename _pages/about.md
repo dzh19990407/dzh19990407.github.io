@@ -16,7 +16,7 @@ Research Interests
 ------
 My current research focuses on computer vision, in particular I have recently worked in:
 - Computer Vision
-  - Vision and Language: referring video object segmentation and panoptic narrative grounding
+  - Vision and Language: referring image/video segmentation 
 
 Please refer to my [Google scholar](https://scholar.google.com/citations?user=czvpD10AAAAJ&hl) for a full list of my publications.
 
