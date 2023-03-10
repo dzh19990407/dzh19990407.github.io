@@ -1,16 +1,17 @@
 ---
 layout: archive
 title: "Publications"
-permalink: /publications/
+permalink: /
 author_profile: true
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
+Conference Papers
+------
 
-{% include base_path %}
+Journal Papers
+------
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+Tech Reports
+------
+
+Please refer to my [Google scholar](https://scholar.google.com/citations?user=czvpD10AAAAJ&hl) for a full list of my publications.
