@@ -376,7 +376,7 @@
                 <h1 class="name">Zihan Ding<span style="font-family: 'KaiTi', sans-serif; font-size: 0.8em;"> 丁子涵</span></h1>
                 <p>Ph.D Candidate<br> Beihang University</p>
                 <div class="contact-links">
-                    <a href="mailto:dingihan737@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="#" onclick="copyEmail()" id="email-btn"><i class="fas fa-envelope"></i> Email</a>
                     <a href="https://scholar.google.com/citations?user=czvpD10AAAAJ"><i class="fas fa-graduation-cap"></i> Scholar</a>
                     <a href="https://github.com/dzh19990407"><i class="fab fa-github"></i> GitHub</a>
                 </div>
@@ -415,5 +415,36 @@ Currently, I am also a research intern at <a href="https://www.tencent.com">Tenc
             </div>
         </section>
     </div>
+
+    <script>
+        async function copyEmail() {
+            const email = 'dingzihan737@gmail.com';
+            const emailBtn = document.getElementById('email-btn');
+            const originalText = emailBtn.innerHTML;
+            
+            try {
+                await navigator.clipboard.writeText(email);
+                emailBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                
+                setTimeout(() => {
+                    emailBtn.innerHTML = originalText;
+                }, 2000);
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                emailBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                
+                setTimeout(() => {
+                    emailBtn.innerHTML = originalText;
+                }, 2000);
+            }
+        }
+    </script>
 </body>
 </html>
