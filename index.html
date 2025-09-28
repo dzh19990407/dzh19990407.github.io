@@ -377,16 +377,16 @@
                 <p>Ph.D Candidate<br> Beihang University</p>
                 <div class="contact-links">
                     <a href="#" onclick="copyEmail()" id="email-btn"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="https://scholar.google.com/citations?user=czvpD10AAAAJ"><i class="fas fa-graduation-cap"></i> Scholar</a>
-                    <a href="https://github.com/dzh19990407"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://scholar.google.com/citations?user=czvpD10AAAAJ" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Scholar</a>
+                    <a href="https://github.com/dzh19990407" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </header>
 
         <section class="section">
             <h2 class="section-heading">Bio</h2>
-            I am currently a Ph.D. candidate at <a href="https://www.buaa.edu.cn">Beihang University</a>, where my research focuses on <i>Deep Reinforcement Learning</i> and <i>Large Language Models</i>. I am fortunate to be advised by Prof. <a href="https://scholar.google.com/citations?user=-QtVtNEAAAAJ">Si Liu</a>. I received my Bachelor's degree from Beihang University in 2021.
-Currently, I am also a research intern at <a href="https://www.tencent.com">Tencent</a>, working under the guidance of <a href="https://scholar.google.com/citations?user=T4xuHn8AAAAJ">Zhongwen Xu</a>.
+            I am currently a Ph.D. candidate at <a href="https://www.buaa.edu.cn" target="_blank" rel="noopener noreferrer">Beihang University</a>, where my research focuses on <i>Deep Reinforcement Learning</i> and <i>Large Language Models</i>. I am fortunate to be advised by Prof. <a href="https://scholar.google.com/citations?user=-QtVtNEAAAAJ" target="_blank" rel="noopener noreferrer">Si Liu</a>. I received my Bachelor's degree from Beihang University in 2021.
+Currently, I am also a research intern at <a href="https://www.tencent.com" target="_blank" rel="noopener noreferrer">Tencent</a>, working under the guidance of <a href="https://scholar.google.com/citations?user=T4xuHn8AAAAJ" target="_blank" rel="noopener noreferrer">Zhongwen Xu</a>.
         </section>
 
          <section class="section">
@@ -396,10 +396,10 @@ Currently, I am also a research intern at <a href="https://www.tencent.com">Tenc
                 <p class="pub-authors">Zhongwen Xu<sup>*</sup> and <strong>Zihan Ding<sup>*</sup></strong></p>
                 <p class="pub-venue">Technical Report</p>
                 <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2509.13232"><i class="fas fa-file-pdf"></i> Paper</a>
-                    <a href="https://zhongwenxu.notion.site/Single-stream-Policy-Optimization-26a1c4e140e380d78d51fa4567727f50"><i class="fab fa-notion"></i> Blog</a>
-                    <a href="https://github.com/volcengine/verl/pull/3503"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://huggingface.co/collections/dingzihan737/spo-68c2328f7e4e8eef5419e428"><i class="fas fa-database"></i> Huggingface</a>
+                    <a href="https://arxiv.org/abs/2509.13232" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://zhongwenxu.notion.site/Single-stream-Policy-Optimization-26a1c4e140e380d78d51fa4567727f50" target="_blank" rel="noopener noreferrer"><i class="fab fa-notion"></i> Blog</a>
+                    <a href="https://github.com/volcengine/verl/pull/3503" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://huggingface.co/collections/dingzihan737/spo-68c2328f7e4e8eef5419e428" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Huggingface</a>
                 </div>
             </div>
         </section>
@@ -410,11 +410,11 @@ Currently, I am also a research intern at <a href="https://www.tencent.com">Tenc
             const email = 'dingzihan737@gmail.com';
             const emailBtn = document.getElementById('email-btn');
             const originalText = emailBtn.innerHTML;
-            
+
             try {
                 await navigator.clipboard.writeText(email);
                 emailBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                
+
                 setTimeout(() => {
                     emailBtn.innerHTML = originalText;
                 }, 2000);
@@ -426,14 +426,36 @@ Currently, I am also a research intern at <a href="https://www.tencent.com">Tenc
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                
+
                 emailBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                
+
                 setTimeout(() => {
                     emailBtn.innerHTML = originalText;
                 }, 2000);
             }
         }
+
+        // Automatically set external links to open in new tab
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href]');
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+
+                // Check if it's an external link (starts with http/https and not current domain)
+                if (href && (href.startsWith('http://') || href.startsWith('https://')) &&
+                    !href.includes(window.location.hostname)) {
+
+                    // Only add target and rel if not already set
+                    if (!link.hasAttribute('target')) {
+                        link.setAttribute('target', '_blank');
+                    }
+                    if (!link.hasAttribute('rel')) {
+                        link.setAttribute('rel', 'noopener noreferrer');
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
