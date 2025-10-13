@@ -341,30 +341,93 @@
             font-style: italic;
         }
 
+        /* Tab styles */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-family: 'Orbitron', monospace;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-button:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .tab-button.active {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .contact-links {
                 justify-content: center;
             }
-            
+
             .section {
                 padding: 20px;
             }
-            
+
             .news-date {
                 min-width: 80px;
             }
-            
+
             .name {
                 font-size: 1.8em;
             }
-            
+
             .section-heading {
                 font-size: 1.3em;
+            }
+
+            .tabs {
+                gap: 8px;
+            }
+
+            .tab-button {
+                padding: 8px 15px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -389,23 +452,173 @@
 Currently, I am also a research intern at <a href="https://www.tencent.com" target="_blank" rel="noopener noreferrer">Tencent</a>, working under the guidance of <a href="https://scholar.google.com/citations?user=T4xuHn8AAAAJ" target="_blank" rel="noopener noreferrer">Zhongwen Xu</a>.
         </section>
 
-         <section class="section">
-            <h2 class="section-heading">Technical Report</h2>
-              <div class="publication">
-                <h3 class="pub-title">Single-stream Policy Optimization</h3>
-                <p class="pub-authors">Zhongwen Xu<sup>*</sup> and <strong>Zihan Ding<sup>*</sup></strong></p>
-                <p class="pub-venue">Technical Report</p>
-                <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2509.13232" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
-                    <a href="https://zhongwenxu.notion.site/Single-stream-Policy-Optimization-26a1c4e140e380d78d51fa4567727f50" target="_blank" rel="noopener noreferrer"><i class="fab fa-notion"></i> Blog</a>
-                    <a href="https://github.com/volcengine/verl/pull/3503" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://huggingface.co/collections/dingzihan737/spo-68c2328f7e4e8eef5419e428" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Huggingface</a>
+        <section class="section">
+            <h2 class="section-heading">Publications</h2>
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('2025')">2025</button>
+                <button class="tab-button" onclick="showTab('2024')">2024</button>
+                <button class="tab-button" onclick="showTab('2023')">2023</button>
+                <button class="tab-button" onclick="showTab('2022')">2022</button>
+                <button class="tab-button" onclick="showTab('2021')">2021</button>
+            </div>
+
+            <!-- 2025 Publications -->
+            <div id="tab-2025" class="tab-content active">
+                <div class="publication">
+                    <h3 class="pub-title">Point Cluster: A Compact Message Unit for Communication-Efficient Collaborative Perception</h3>
+                    <p class="pub-authors"><strong>Zihan Ding</strong>, Jiahui Fu, Si Liu, Hongyu Li, Siheng Chen, Hongsheng Li, Shifeng Zhang, Xu Zhou</p>
+                    <p class="pub-venue">ICLR 2025</p>
+                    <div class="pub-links">
+                        <a href="https://openreview.net/pdf?id=54XlM8Clkg" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">Single-stream Policy Optimization</h3>
+                    <p class="pub-authors">Zhongwen Xu<sup>*</sup>, <strong>Zihan Ding<sup>*</sup></strong></p>
+                    <p class="pub-venue">arXiv Preprint</p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2509.13232" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://zhongwenxu.notion.site/Single-stream-Policy-Optimization-26a1c4e140e380d78d51fa4567727f50" target="_blank" rel="noopener noreferrer"><i class="fab fa-notion"></i> Blog</a>
+                        <a href="https://github.com/volcengine/verl/pull/3503" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://huggingface.co/collections/dingzihan737/spo-68c2328f7e4e8eef5419e428" target="_blank" rel="noopener noreferrer"><i class="fas fa-database"></i> Huggingface</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024 Publications -->
+            <div id="tab-2024" class="tab-content">
+                <div class="publication">
+                    <h3 class="pub-title">Topv-nav: Unlocking the Top-View Spatial Reasoning Potential of MLLM for Zero-Shot Object Navigation</h3>
+                    <p class="pub-authors">Linqing Zhong, Chen Gao, <strong>Zihan Ding</strong>, Yue Liao, Huimin Ma, Shifeng Zhang, Xu Zhou, Si Liu</p>
+                    <p class="pub-venue">arXiv Preprint</p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2411.16425" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">Dynamic Prompting of Frozen Text-to-Image Diffusion Models for Panoptic Narrative Grounding</h3>
+                    <p class="pub-authors">Hongyu Li, Tianrui Hui, <strong>Zihan Ding</strong>, Jing Zhang, Bin Ma, Xiaoming Wei, Jizhong Han, Si Liu</p>
+                    <p class="pub-venue">ACM MM 2024</p>
+                    <div class="pub-links">
+                        <a href="https://dl.acm.org/doi/pdf/10.1145/3664647.3686836" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">Region-Adaptive and Context-Complementary Cross Modulation for RGB-T Semantic Segmentation</h3>
+                    <p class="pub-authors">Fengguang Peng, <strong>Zihan Ding</strong>, Ziming Chen, Gang Wang, Tianrui Hui, Si Liu, Hang Shi</p>
+                    <p class="pub-venue">Pattern Recognition</p>
+                    <div class="pub-links">
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0031320323007896" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2023 Publications -->
+            <div id="tab-2023" class="tab-content">
+                <div class="publication">
+                    <h3 class="pub-title">Language-Aware Spatial-Temporal Collaboration for Referring Video Segmentation</h3>
+                    <p class="pub-authors">Tianrui Hui, Si Liu, <strong>Zihan Ding</strong>, Shaofei Huang, Guanbin Li, Wenguan Wang, Luoqi Liu, Jizhong Han</p>
+                    <p class="pub-venue">TPAMI</p>
+                    <div class="pub-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10013778/" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">Enriching Phrases with Coupled Pixel and Object Contexts for Panoptic Narrative Grounding</h3>
+                    <p class="pub-authors">Tianrui Hui, <strong>Zihan Ding</strong>, Junshi Huang, Xiaoming Wei, Xiaolin Wei, Jiao Dai, Jizhong Han, Si Liu</p>
+                    <p class="pub-venue">IJCAI 2023</p>
+                    <div class="pub-links">
+                        <a href="https://www.ijcai.org/proceedings/2023/0099.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">Object-Aware Distillation Pyramid for Open-Vocabulary Object Detection</h3>
+                    <p class="pub-authors">Luting Wang, Yi Liu, Penghui Du, <strong>Zihan Ding</strong>, Yue Liao, Qiaosong Qi, Biaolong Chen, Si Liu</p>
+                    <p class="pub-venue">CVPR 2023</p>
+                    <div class="pub-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Object-Aware_Distillation_Pyramid_for_Open-Vocabulary_Object_Detection_CVPR_2023_paper.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022 Publications -->
+            <div id="tab-2022" class="tab-content">
+                <div class="publication">
+                    <h3 class="pub-title">Language-Bridged Spatial-Temporal Interaction for Referring Video Object Segmentation</h3>
+                    <p class="pub-authors"><strong>Zihan Ding</strong>, Tianrui Hui, Junshi Huang, Xiaoming Wei, Jizhong Han, Si Liu</p>
+                    <p class="pub-venue">CVPR 2022</p>
+                    <div class="pub-links">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Ding_Language-Bridged_Spatial-Temporal_Interaction_for_Referring_Video_Object_Segmentation_CVPR_2022_paper.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://github.com/dzh19990407/LBDT" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">PPMN: Pixel-Phrase Matching Network for One-Stage Panoptic Narrative Grounding</h3>
+                    <p class="pub-authors"><strong>Zihan Ding<sup>*</sup></strong>, Zi-han Ding<sup>*</sup>, Tianrui Hui, Junshi Huang, Xiaoming Wei, Xiaolin Wei, Si Liu</p>
+                    <p class="pub-venue">ACM MM 2022</p>
+                    <div class="pub-links">
+                        <a href="https://dl.acm.org/doi/pdf/10.1145/3503161.3548086" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="https://github.com/dzh19990407/PPMN" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2021 Publications -->
+            <div id="tab-2021" class="tab-content">
+                <div class="publication">
+                    <h3 class="pub-title">Collaborative Spatial-Temporal Modeling for Language-Queried Video Actor Segmentation</h3>
+                    <p class="pub-authors">Tianrui Hui, Shaofei Huang, Si Liu, <strong>Zihan Ding</strong>, Guanbin Li, Wenguan Wang, Jizhong Han, Fei Wang</p>
+                    <p class="pub-venue">CVPR 2021</p>
+                    <div class="pub-links">
+                        <a href="http://openaccess.thecvf.com/content/CVPR2021/papers/Hui_Collaborative_Spatial-Temporal_Modeling_for_Language-Queried_Video_Actor_Segmentation_CVPR_2021_paper.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3 class="pub-title">Progressive Multimodal Interaction Network for Referring Video Object Segmentation</h3>
+                    <p class="pub-authors"><strong>Zihan Ding</strong>, Tianrui Hui, Shaofei Huang, Si Liu, Xuan Luo, Junshi Huang, Xiaoming Wei</p>
+                    <p class="pub-venue">The 3rd Large-scale Video Object Segmentation Challenge</p>
+                    <div class="pub-links">
+                        <a href="https://youtube-vos.org/assets/challenge/2021/reports/RVOS_2_Ding.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
     <script>
+        // Tab switching function
+        function showTab(year) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab content
+            const selectedTab = document.getElementById('tab-' + year);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            // Add active class to clicked button
+            const clickedButton = event.target;
+            clickedButton.classList.add('active');
+        }
+
         async function copyEmail() {
             const email = 'dingzihan737@gmail.com';
             const emailBtn = document.getElementById('email-btn');
