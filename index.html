@@ -61,6 +61,27 @@
             100% { transform: translateY(4px); }
         }
 
+        .avatar-wrapper {
+            margin-left: auto;
+        }
+
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            background: var(--bg-dark);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -429,6 +450,15 @@
                 padding: 8px 15px;
                 font-size: 0.9em;
             }
+
+            .avatar-wrapper {
+                margin: 0 auto;
+            }
+
+            .profile-avatar {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -443,6 +473,9 @@
                     <a href="https://scholar.google.com/citations?user=czvpD10AAAAJ" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Scholar</a>
                     <a href="https://github.com/dzh19990407" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </div>
+            </div>
+            <div class="avatar-wrapper">
+                <img src="figures/head_figure.jpg" alt="Zihan Ding portrait" class="profile-avatar">
             </div>
         </header>
 
