@@ -60,7 +60,7 @@ with in-context demonstrations.
 <div class='paper-box-text' markdown="1">
 
 <span class="paper-title">UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations</span>  
-<strong>Zihan Ding</strong>, Longxu Dou, Qi Gao, Xiangwu Guo, Shengchao Hu, Zilong Huang, Zihang Jiang, Lei Ke, Mengcheng Lan, Weixian Lei, Hanxuan Li, Honglin Li, Xiyun Li, Zaitang Li, Leowei Liang, Xin Luo, Haozhe Ma, Jiayi Mao, Zhoujie Pan, Can Qin, Tianyuan Qu, Weiqi Wang, Wenkai Wang, Yonglin Wang, Yuxin Wang, Chenxu Wu, Yingchen Yu, Chenyu Zhang, Yuhao Zheng  
+<strong class="author-hl">Zihan Ding</strong>, Longxu Dou, Qi Gao, Xiangwu Guo, Shengchao Hu, Zilong Huang, Zihang Jiang, Lei Ke, Mengcheng Lan, Weixian Lei, Hanxuan Li, Honglin Li, Xiyun Li, Zaitang Li, Leowei Liang, Xin Luo, Haozhe Ma, Jiayi Mao, Zhoujie Pan, Can Qin, Tianyuan Qu, Weiqi Wang, Wenkai Wang, Yonglin Wang, Yuxin Wang, Chenxu Wu, Yingchen Yu, Chenyu Zhang, Yuhao Zheng  
 <span class="paper-note">Authors are listed in alphabetical order by last name.</span>  
 <em>Technical Report</em>  
 <div class="paper-links">
@@ -77,7 +77,7 @@ with in-context demonstrations.
 <div class='paper-box-text' markdown="1">
 
 <span class="paper-title">Single-stream Policy Optimization</span>  
-Zhongwen Xu<sup class="author-star"></sup> and <strong>Zihan Ding</strong><sup class="author-star"></sup>  
+Zhongwen Xu<sup class="author-star"></sup> and <strong class="author-hl">Zihan Ding</strong><sup class="author-star"></sup>  
 <span class="paper-note"><sup class="author-star"></sup> Equal contribution</span>  
 <em>ICLR 2026</em>  
 <div class="paper-links">
@@ -99,16 +99,16 @@ Zhongwen Xu<sup class="author-star"></sup> and <strong>Zihan Ding</strong><sup c
 <div class="experience-list">
   <div class="experience-item">
     <div class="experience-item-head">
-      <strong>Tencent HunYuan (Intern Project Up)</strong>
-      <span><em>Research Intern, 2026.04 - Present</em></span>
+      <strong>Tencent HunYuan</strong>
+      <span><em>Research Intern (Intern Project Up), 2026.04 - Present</em></span>
     </div>
     <p>Worked on long-horizon reinforcement learning for computer-use agents.</p>
   </div>
 
   <div class="experience-item">
     <div class="experience-item-head">
-      <strong>Tencent AIPD (Rhino-Bird Elite Talent)</strong>
-      <span><em>Research Intern, 2025.06 - 2026.03</em></span>
+      <strong>Tencent AIPD</strong>
+      <span><em>Research Intern (Rhino-Bird Elite Talent), 2025.06 - 2026.03</em></span>
     </div>
     <p>Worked on LLM post-training to improve reasoning ability.</p>
   </div>
