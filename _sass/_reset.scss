@@ -8,6 +8,7 @@ html {
   /* apply a natural box layout model to all elements */
   box-sizing: border-box;
   background-color: $background-color;
+  font-family: $global-font-family;
   font-size: 15px;
 
   // @include breakpoint($medium) {

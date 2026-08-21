@@ -13,19 +13,12 @@
     padding-bottom: 0em;
     color: $text-color;
     font-family: $global-font-family;
-    font-weight: 500;
     line-height: 1.5;
-    font-synthesis: weight style;
-    -webkit-text-stroke: 0.28px currentColor;
   
     &.overflow--hidden {
       /* when primary navigation is visible, the content in the background won't scroll */
       overflow: hidden;
     }
-  }
-
-  .fa, .fas, .far, .fab, .fal, .ai {
-    -webkit-text-stroke: 0;
   }
   
   h1, h2, h3, h4, h5, h6 {

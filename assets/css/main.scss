@@ -197,6 +197,7 @@ $card-shadow: rgba(15, 118, 110, 0.16);
     border-radius: 999px;
     background: rgba(217, 119, 6, 0.12);
     color: #b45309;
+    font-family: $sans-serif;
     font-size: .78em;
     font-weight: 700;
     letter-spacing: .06em;
@@ -238,6 +239,7 @@ $card-shadow: rgba(15, 118, 110, 0.16);
         border: 1px solid var(--section-link-border, rgba(15, 118, 110, 0.16));
         background: var(--section-link-bg, rgba(15, 118, 110, 0.08));
         color: var(--section-accent-dark, #{$card-accent-dark});
+        font-family: $sans-serif;
         font-size: .9em;
         font-weight: 600;
         line-height: 1.2;
@@ -394,6 +396,7 @@ h1:before, .anchor:before {
     color: white;
     background: linear-gradient(135deg, var(--section-accent, #{$card-accent}) 0%, var(--section-accent-dark, #{$card-accent-dark}) 100%);
     box-shadow: 0 10px 22px var(--section-badge-shadow, rgba(15, 118, 110, 0.22));
+    font-family: $sans-serif;
     font-size: .8em;
     line-height: 1.9;
     letter-spacing: .04em;
@@ -443,6 +446,7 @@ h1:before, .anchor:before {
     background: rgba(245, 158, 11, 0.05);
     color: #b45309;
     font: inherit;
+    font-family: $sans-serif;
     font-size: .9em;
     font-weight: 600;
     cursor: pointer;
@@ -510,6 +514,7 @@ h1:before, .anchor:before {
     background: rgba(37, 99, 235, 0.06);
     color: #1d4ed8;
     font: inherit;
+    font-family: $sans-serif;
     font-size: .95em;
     font-weight: 600;
     cursor: pointer;
@@ -574,6 +579,7 @@ h1:before, .anchor:before {
     gap: .85rem;
     margin: 2.2rem 0 .6rem;
     color: var(--section-accent, #{$card-accent});
+    font-family: $sans-serif;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: .08em;
@@ -943,3 +949,5 @@ h1:before, .anchor:before {
         border-radius: 999px;
     }
 }
+
+@import "editorial-home";

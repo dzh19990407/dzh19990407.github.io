@@ -15,28 +15,34 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
-<span class='anchor' id='about-me'></span>
+<div class="anchor" id="about-me"></div>
 
 I am currently a Ph.D. candidate at the Institute of Artificial Intelligence, Beihang University, and a member of [CoLab](https://colalab.net/), advised by [Prof. Si Liu](https://scholar.google.com/citations?user=-QtVtNEAAAAJ&hl=en), with an expected graduation date of ``2027.01``. I received my B.Eng. from Beihang University in 2021. Currently, I am also a research intern at Tencent HunYuan. My research interests lie in ``Large Language Models`` and ``Deep Reinforcement Learning``.
 
 <div class="job-seeking-callout">
-  <span class="job-seeking-label">Open to Opportunities</span>
-  I am currently seeking <strong>2027 new-graduate full-time opportunities</strong> in <em>horizon RL</em>. Feel free to reach me out via email or WeChat.
+  <span class="job-seeking-label">Availability</span>
+  I am currently seeking <strong>2027 new-graduate full-time opportunities</strong> in <em>horizon RL</em>. Feel free to reach out via email or WeChat.
 </div>
 
-<span class='anchor' id='news'></span>
+<div class="anchor" id="news"></div>
 
-# 🔥 News
+<h1>News</h1>
 
-- 🎉 2026.08: [UI-Mate](https://ui-mate.github.io/#app) was released for advancing open-weight foundation GUI agents
-with in-context demonstrations.
-- 🎉 2026.01: [SPO](https://proceedings.iclr.cc/paper_files/paper/2026/file/e46fc33e80e9fa2febcdb058fba4beca-Paper-Conference.pdf) was accepted to **ICLR 2026**.
-{: .news-list}
+<ul class="news-list">
+  <li>
+    <time datetime="2026-08">2026.08</time>
+    <span><a href="https://ui-mate.github.io/#app">UI-Mate</a> was released for advancing open-weight foundation GUI agents with in-context demonstrations.</span>
+  </li>
+  <li>
+    <time datetime="2026-01">2026.01</time>
+    <span><a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/e46fc33e80e9fa2febcdb058fba4beca-Paper-Conference.pdf">SPO</a> was accepted to <strong>ICLR 2026</strong>.</span>
+  </li>
+</ul>
 
-<span class='anchor' id='publications'></span>
+<div class="anchor" id="publications"></div>
 
 <div class="publications-section">
-  <h1><i class="fas fa-file-alt" style="color:#2563eb;"></i> Publications</h1>
+  <h1>Publications</h1>
 
 <div class="pub-year-pager" aria-label="Browse publications by year">
   <button type="button" class="pub-year-nav" data-pub-nav="prev" aria-label="Previous publication year">
@@ -91,16 +97,20 @@ Zhongwen Xu<sup class="author-star"></sup> and <strong class="author-hl">Zihan D
 </div>
 </div>
 
-<span class='anchor' id='experience'></span>
+<div class="anchor" id="experience"></div>
 
-# <i class="fas fa-briefcase" style="color:#059669;"></i> Research and Industry Experience
+# Research and Industry Experience
 
 <div class="experience-section">
 <div class="experience-list">
   <div class="experience-item">
     <div class="experience-item-head">
       <strong>Tencent HunYuan</strong>
-      <span><em>Research Intern (Intern Project Up), 2026.04 - Present</em></span>
+      <span>
+        <em>Research Intern (Intern Project Up)</em>
+        <small class="experience-dates">2026.04 - Present</small>
+        <small class="experience-mentor">Mentor: Leowei Liang</small>
+      </span>
     </div>
     <p>Worked on long-horizon reinforcement learning for computer-use agents.</p>
   </div>
@@ -108,7 +118,11 @@ Zhongwen Xu<sup class="author-star"></sup> and <strong class="author-hl">Zihan D
   <div class="experience-item">
     <div class="experience-item-head">
       <strong>Tencent AIPD</strong>
-      <span><em>Research Intern (Rhino-Bird Elite Talent), 2025.06 - 2026.03</em></span>
+      <span>
+        <em>Research Intern (Rhino-Bird Elite Talent)</em>
+        <small class="experience-dates">2025.06 - 2026.03</small>
+        <small class="experience-mentor">Mentor: Zhongwen Xu</small>
+      </span>
     </div>
     <p>Worked on LLM post-training to improve reasoning ability.</p>
   </div>
@@ -269,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const section = document.createElement("section");
         section.className = "screen-section";
-        section.dataset.sectionId = id;
+        section.setAttribute("data-section-id", id);
 
         if (id === "about-me") {
           section.classList.add("screen-section--intro");
@@ -308,8 +322,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const deck = buildDeck();
-    if (!deck || deck.dataset.deckReady === "true") return;
-    deck.dataset.deckReady = "true";
+    if (!deck || deck.getAttribute("data-deck-ready") === "true") return;
+    deck.setAttribute("data-deck-ready", "true");
 
     const sections = Array.from(deck.querySelectorAll(".screen-section"));
     if (!sections.length) return;
@@ -328,6 +342,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let isScreenMode = false;
     let transitionLocked = false;
     let unlockTimer = null;
+    let edgeIntent = null;
+    let edgeIntentTimer = null;
+
+    const clearEdgeIntent = () => {
+      window.clearTimeout(edgeIntentTimer);
+      edgeIntentTimer = null;
+      edgeIntent = null;
+    };
+
+    const armEdgeIntent = (body, direction) => {
+      const isSameEdge =
+        edgeIntent &&
+        edgeIntent.body === body &&
+        edgeIntent.direction === direction;
+
+      if (!isSameEdge) {
+        edgeIntent = { body, direction, ready: false };
+      } else {
+        edgeIntent.ready = false;
+      }
+
+      window.clearTimeout(edgeIntentTimer);
+      edgeIntentTimer = window.setTimeout(() => {
+        if (
+          edgeIntent &&
+          edgeIntent.body === body &&
+          edgeIntent.direction === direction
+        ) {
+          edgeIntent.ready = true;
+        }
+      }, 280);
+    };
 
     const getHashIndex = () => {
       const hash = window.location.hash.replace(/^#/, "");
@@ -369,6 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       if (nextIndex < 0 || nextIndex >= sections.length) return false;
+      clearEdgeIntent();
       activeIndex = nextIndex;
 
       sections.forEach((section, index) => {
@@ -435,21 +482,37 @@ document.addEventListener("DOMContentLoaded", function () {
         const activeBody = activeSection.querySelector(".screen-section__body");
         if (!activeBody || Math.abs(event.deltaY) < 8) return;
 
-        if (
-          event.deltaY > 0 &&
-          isAtBottom(activeBody) &&
-          activeIndex < sections.length - 1
-        ) {
-          event.preventDefault();
-          moveSection(1, { history: "replace" });
-        } else if (
-          event.deltaY < 0 &&
-          isAtTop(activeBody) &&
-          activeIndex > 0
-        ) {
-          event.preventDefault();
-          moveSection(-1, { history: "replace" });
+        const direction = event.deltaY > 0 ? 1 : -1;
+        const isAtEdge =
+          direction > 0 ? isAtBottom(activeBody) : isAtTop(activeBody);
+        const canMove =
+          direction > 0
+            ? activeIndex < sections.length - 1
+            : activeIndex > 0;
+
+        if (!isAtEdge || !canMove) {
+          clearEdgeIntent();
+          return;
         }
+
+        event.preventDefault();
+
+        const isReady =
+          edgeIntent &&
+          edgeIntent.body === activeBody &&
+          edgeIntent.direction === direction &&
+          edgeIntent.ready;
+        const triggerDelta = event.deltaMode === 0 ? 18 : 1;
+
+        if (isReady) {
+          if (Math.abs(event.deltaY) >= triggerDelta) {
+            clearEdgeIntent();
+            moveSection(direction, { history: "replace" });
+          }
+          return;
+        }
+
+        armEdgeIntent(activeBody, direction);
       },
       { passive: false }
     );
@@ -501,6 +564,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         deck.style.removeProperty("--deck-height");
         window.clearTimeout(unlockTimer);
+        clearEdgeIntent();
         transitionLocked = false;
 
         sections.forEach((section) => {
