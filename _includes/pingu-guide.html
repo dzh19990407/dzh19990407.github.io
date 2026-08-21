@@ -1,0 +1,74 @@
+<aside class="pingu-guide" data-pingu-guide data-active-section="about-me" aria-label="Pingu page guide">
+  <section
+    class="pingu-guide__panel"
+    id="pingu-guide-panel"
+    role="dialog"
+    aria-label="Page tour"
+    aria-hidden="true"
+    inert
+  >
+    <header class="pingu-guide__panel-head">
+      <div>
+        <span class="pingu-guide__eyebrow">Little page tour</span>
+        <h2 class="pingu-guide__title">Where shall we go?</h2>
+      </div>
+      <button class="pingu-guide__close" type="button" data-pingu-close aria-label="Close page guide">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+    </header>
+
+    <p class="pingu-guide__intro">
+      <span class="pingu-guide__intro-mark" aria-hidden="true">✦</span>
+      <span data-pingu-status>Hi! I can show you around.</span>
+    </p>
+
+    <nav class="pingu-guide__nav" aria-label="Jump to a page section">
+      {% for link in site.data.navigation.main %}
+        {% assign section_id = link.url | split: "#" | last %}
+        <a
+          class="pingu-guide__link"
+          href="{{ link.url | relative_url }}"
+          target="_self"
+          data-pingu-target="{{ section_id }}"
+        >
+          <span class="pingu-guide__link-index">0{{ forloop.index }}</span>
+          <span class="pingu-guide__link-label">{{ link.title }}</span>
+          <svg class="pingu-guide__link-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13M13 7l5 5-5 5"></path>
+          </svg>
+        </a>
+      {% endfor %}
+    </nav>
+
+    <button class="pingu-guide__next" type="button" data-pingu-next>
+      <span>
+        <small>Next stop</small>
+        <strong data-pingu-next-label>News</strong>
+      </span>
+      <svg viewBox="0 0 32 20" aria-hidden="true">
+        <path d="M2 10h25M20 3l7 7-7 7"></path>
+      </svg>
+    </button>
+  </section>
+
+  <div class="pingu-guide__hint" data-pingu-hint aria-hidden="true">
+    <span>Need a tiny tour?</span>
+  </div>
+
+  <button
+    class="pingu-guide__trigger"
+    type="button"
+    data-pingu-trigger
+    aria-controls="pingu-guide-panel"
+    aria-expanded="false"
+    aria-label="Open Pingu page guide"
+  >
+    <span
+      class="pingu-guide__sprite"
+      data-pingu-sprite
+      aria-hidden="true"
+    ></span>
+  </button>
+</aside>

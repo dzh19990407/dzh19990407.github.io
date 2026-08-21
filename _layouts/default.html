@@ -27,6 +27,10 @@ layout: compress
       </article>
     </div>
 
+    {% if page.url == "/" %}
+      {% include pingu-guide.html %}
+    {% endif %}
+
     {% include scripts.html %}
   </body>
 </html>
