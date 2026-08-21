@@ -155,10 +155,27 @@ $card-shadow: rgba(15, 118, 110, 0.16);
     }
 }
 
-.section-note {
-    font-size: .8em;
-    font-style: italic;
-    color: var(--section-accent-dark, #64748b);
+.publications-section .paper-title {
+    display: block;
+    font-weight: 700;
+    color: inherit;
+}
+
+.publications-section .paper-box-text strong {
+    color: #6d28d9;
+    font-weight: 700;
+}
+
+.publications-section .author-star::before {
+    content: "*";
+}
+
+.publications-section .paper-note {
+    display: block;
+    margin: .2rem 0 .1rem;
+    font-size: .78em;
+    color: #6b7280;
+    line-height: 1.45;
 }
 
 .job-seeking-callout {

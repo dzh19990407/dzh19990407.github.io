@@ -11,15 +11,3 @@ main:
 
   - title: "Experience"
     url: "/#experience"
-
-  - title: "Education"
-    url: "/#education"
-
-  - title: "Projects"
-    url: "/#projects"
-
-  - title: "Honors"
-    url: "/#honors"
-
-  - title: "Service"
-    url: "/#service"

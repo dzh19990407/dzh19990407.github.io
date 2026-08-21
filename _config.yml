@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Ziqin Wang"
+title                    : "Zihan Ding"
 description              : ""
-repository               : "wz7in/wz7in.github.io"
+repository               : "dzh19990407/dzh19990407.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -21,24 +21,24 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Ziqin Wang"
-  avatar           : "images/avatar.png"
-  bio              : "Ph.D. Student, Beihang University"
+  name             : "Zihan Ding"
+  avatar           : "images/avatar.jpg"
+  bio              : "Ph.D. Candidate, Beihang University"
   location         : "Beijing, China"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=BF-xXsIAAAAJ&view_op=list_works"
-  email            : "wzqin@buaa.edu.cn"
-  wechat           : "wzqinTT"
+  googlescholar    : "https://scholar.google.com/citations?user=czvpD10AAAAJ&hl=zh-CN"
+  email            : "dingzihan737@gmail.com"
+  wechat           : "Rdwh1tE"
   researchgate     :
-  uri              : "https://wz7in.github.io"
+  uri              : "dzh19990407.github.io"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           : "wz7in"
+  github           : "dzh19990407"
   google_plus      :
   keybase          :
   instagram        :
