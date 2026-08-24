@@ -8,13 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
 <div class="anchor" id="about-me"></div>
 
 I am currently a Ph.D. candidate at the Institute of Artificial Intelligence, Beihang University, and a member of [CoLab](https://colalab.net/), advised by [Prof. Si Liu](https://scholar.google.com/citations?user=-QtVtNEAAAAJ&hl=en), with an expected graduation date of ``2027.01``. I received my B.Eng. from Beihang University in 2021. Currently, I am also a research intern at Tencent HunYuan. My research interests lie in ``Large Language Models`` and ``Deep Reinforcement Learning``.
@@ -43,6 +36,9 @@ I am currently a Ph.D. candidate at the Institute of Artificial Intelligence, Be
 
 <div class="publications-section">
   <h1>Publications</h1>
+  <p class="paper-note publications-note">
+    My earlier research centered on computer vision and multimodal learning; I now focus on reinforcement learning and large language models. Additional publications are available on <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
+  </p>
 
 <div class="pub-year-pager" aria-label="Browse publications by year">
   <button type="button" class="pub-year-nav" data-pub-nav="prev" aria-label="Previous publication year">
