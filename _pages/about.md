@@ -123,6 +123,18 @@ Zhongwen Xu<sup class="author-star"></sup> and <strong class="author-hl">Zihan D
     <p>Worked on LLM post-training to improve reasoning ability.</p>
   </div>
 
+  <div class="experience-item">
+    <div class="experience-item-head">
+      <strong>Meituan</strong>
+      <span>
+        <em>Research Intern</em>
+        <small class="experience-dates">2021.09 - 2023.06</small>
+        <small class="experience-mentor">Mentor: Junshi Huang</small>
+      </span>
+    </div>
+    <p>Worked on multimodal understanding and generation.</p>
+  </div>
+
 </div>
 </div>
 
